@@ -123,11 +123,11 @@ class Vector2D:
             return True
         return False
 
-    def rotate(self, angle: float) -> 'Vector2D':
+    def rotate(self, a: float) -> 'Vector2D':
         """Returns vector rotated by angle in degrees"""
-        angle = angle * math.pi / 180
-        return Vector2D((round(self.x * math.cos(angle) - self.y * math.sin(angle), 10),
-                         round(self.x * math.sin(angle) + self.y * math.cos(angle), 10)))
+        a = a * math.pi / 180
+        return Vector2D((round(self.x * math.cos(a) - self.y * math.sin(a), 10),
+                         round(self.x * math.sin(a) + self.y * math.cos(a), 10)))
 
 
 def dot(v1: Vector2D, v2: Vector2D) -> float:
@@ -150,8 +150,8 @@ def angle(v1: Vector2D, v2: Vector2D = None, mode: str = 'd') -> float:
         conversion = 1
     else:
         raise ValueError("mode can only be 'd'(degrees) or 'r'(radians)")
-    C = cross(v1, v2)
-    if C > 0:
+    c = cross(v1, v2)
+    if c > 0:
         conversion = -conversion
     return round(math.acos(dot(v1, v2) / v1.length() * v2.length()) * conversion, 10)
 
@@ -170,5 +170,4 @@ def reflect(v1: Vector2D, v2: Vector2D) -> Vector2D:
 
 # -----testing area-----
 if __name__ == "__main__":
-    a = reflect(Vector2D((1, 0)), Vector2D((1, 1)))
-    print(a)
+    pass
