@@ -1,3 +1,4 @@
+
 class Vector2D:
     def __init__(self, arr):
         self.x = arr[0]
@@ -73,9 +74,35 @@ class Vector2D:
             return Vector2D([self.x ** other.x, self.y ** other.y])
         return Vector2D([self.x ** other, self.y ** other])
 
+    def length(self):
+        return (self.x ** 2 + self.y ** 2)**0.5
+
+    def norm(self):
+        return self / self.length()
+
+    def __lt__ (self, other):
+        if isinstance(other, Vector2D):
+            return self.length() < other.length()
+        return self.length() < other
+
+    def __le__(self, other):
+        if isinstance(other, Vector2D):
+            return self.length() <= other.length()
+        return self.length() <= other
+
+    def __gt__ (self, other):
+        if isinstance(other, Vector2D):
+            return self.length() > other.length()
+        return self.length() > other
+
+    def __ge__(self, other):
+        if isinstance(other, Vector2D):
+            return self.length() >= other.length()
+        return self.length() >= other
+
 
 
 
 # -----testing area-----
 if __name__ == "__main__":
-    pass
+    a = Vector2D([1,2])
