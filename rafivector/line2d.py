@@ -1,7 +1,7 @@
 from .vector2d import *
 
 class Line2D:
-    def __init__(self , p1:'Vector2D' , p2:'Vector2D'):
+    def __init__(self , p1:'Vector2D' , p2:'Vector2D') -> None:
         self.p1=p1
         self.p2=p2
 
