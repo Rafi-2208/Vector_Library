@@ -4,7 +4,17 @@ class Line2D:
     def __init__(self , p1:'Vector2D' , p2:'Vector2D') -> None:
         self.p1=p1
         self.p2=p2
+    def __str__(self):
+        return f"({self.p1}, {self.p2})"
 
+    def __repr__(self):
+        return f"({self.p1}, {self.p2})"
+
+    def __eq__(self , l2):
+        if self.p1 == l2.p1 and self.p2 == l2.p2:
+            return True
+        else:
+            return False
 
 def collision(l1, l2):
     x1 = l1.p1.x
