@@ -123,12 +123,16 @@ class Vector2D:
             return True
         return False
 
-    def rotate(self, a: float) -> 'Vector2D':
-        """Returns vector rotated by angle in degrees"""
+    def rotate(self, a: float , point:'Vector2D' = None) -> 'Vector2D':
+        """Returns vector rotated by angle in degrees\n\nOptional argument "point" allows for rotation around specific point"""
         a = a * math.pi / 180
-        return Vector2D((round(self.x * math.cos(a) - self.y * math.sin(a), 10),
+        if point is None:
+            return Vector2D((round(self.x * math.cos(a) - self.y * math.sin(a), 10),
                          round(self.x * math.sin(a) + self.y * math.cos(a), 10)))
-
+        else:
+            v = self - point
+            return Vector2D((round(v.x * math.cos(a) - v.y * math.sin(a) + point.x, 10),
+                         round(v.x * math.sin(a) + v.y * math.cos(a) + point.y, 10)))
 
 def dot(v1: Vector2D, v2: Vector2D) -> float:
     """Returns dot product of two vectors"""
@@ -168,6 +172,9 @@ def reflect(v1: Vector2D, v2: Vector2D) -> Vector2D:
     return parallel - perpendicular
 
 
+
 # -----testing area-----
 if __name__ == "__main__":
-    pass
+    a = Vector2D((2,2))
+    b = Vector2D((1,1))
+    print(a.rotate(90 , b))
