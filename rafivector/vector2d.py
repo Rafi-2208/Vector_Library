@@ -123,6 +123,11 @@ class Vector2D:
             return True
         return False
 
+    def __eq__(self, other):
+        if isinstance(other, Vector2D):
+            return self.x == other.x and self.y == other.y
+        return False
+
     def rotate(self, a: float , point:'Vector2D' = None) -> 'Vector2D':
         """Returns vector rotated by angle in degrees.\n\nOptional argument "point" allows for rotation around specific point."""
         a = a * math.pi / 180
@@ -175,4 +180,6 @@ def reflect(v1: Vector2D, v2: Vector2D) -> Vector2D:
 
 # -----testing area-----
 if __name__ == "__main__":
-    pass
+    a = Vector2D((2,2))
+    b = Vector2D((2,2))
+    print(a == b)
