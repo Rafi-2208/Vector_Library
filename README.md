@@ -11,7 +11,7 @@ This is a simple python library for 2d (and in future 3d) vector operation with 
 
 -norm(self): Returns normalised vector
 
--rotate(self, a): Returns vector rotated by angle in degrees
+-rotate(self, a , point): Returns vector rotated by angle in degrees. Optional argument "point" allows for rotation around specific point.
 
 -dot(v1, v2): Returns dot product of two vectors
 
