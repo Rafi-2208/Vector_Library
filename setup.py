@@ -6,5 +6,5 @@ setup(
     description="A simple library for vector operations",
     author="Rafi",
     packages=find_packages(),
-    install_requires=[],  # dependencies if any
+    install_requires=[],
 )
