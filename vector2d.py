@@ -124,7 +124,7 @@ class Vector2D:
         return False
 
     def rotate(self, a: float , point:'Vector2D' = None) -> 'Vector2D':
-        """Returns vector rotated by angle in degrees\n\nOptional argument "point" allows for rotation around specific point"""
+        """Returns vector rotated by angle in degrees.\n\nOptional argument "point" allows for rotation around specific point."""
         a = a * math.pi / 180
         if point is None:
             return Vector2D((round(self.x * math.cos(a) - self.y * math.sin(a), 10),
