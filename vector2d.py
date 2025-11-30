@@ -175,6 +175,4 @@ def reflect(v1: Vector2D, v2: Vector2D) -> Vector2D:
 
 # -----testing area-----
 if __name__ == "__main__":
-    a = Vector2D((2,2))
-    b = Vector2D((1,1))
-    print(a.rotate(90 , b))
+    pass
