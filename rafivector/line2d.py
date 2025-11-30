@@ -6,7 +6,7 @@ class Line2D:
         self.p2=p2
 
 
-def colision(l1 , l2):
+def collision(l1, l2):
     x1 = l1.p1.x
     x2 = l1.p2.x
     y1 = l1.p1.y
