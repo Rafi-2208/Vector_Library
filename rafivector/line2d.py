@@ -11,9 +11,12 @@ class Line2D:
         return f"({self.p1}, {self.p2})"
 
     def __eq__(self , l2):
-        if self.p1 == l2.p1 and self.p2 == l2.p2:
-            return True
-        else:
+        try:
+            if self.p1 == l2.p1 and self.p2 == l2.p2:
+                return True
+            else:
+                return False
+        except:
             return False
 
 def collision(l1, l2):
